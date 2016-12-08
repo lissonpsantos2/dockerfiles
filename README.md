@@ -1,4 +1,4 @@
-#A default debian dockerfile
+##A default debian dockerfile
 
 A default dockerfile to build a complete image for development
 
@@ -8,11 +8,16 @@ A default dockerfile to build a complete image for development
 * APACHE2
 * COMPOSER
 * NPM
+* NODE
+* BOWER
+* GULP
+* PHONEGAP
 
 
 * NANO
 * VIM
 * HTOP
+* CURL
 
 #Setup
 
@@ -24,12 +29,16 @@ To build an image with docker is pretty simple:
 docker build -t="image-name" /path/to/the/dockerfile
 ```
 
-Then to run that image and attach to it at the same time:
+#RUN
+
+To run the created image and attach to it at the same time:
 
 ```
-docker run -i -t image-name
+docker run -P -v /local/project/path:/home/project-folder -it image-name-id
 ```
+
 Or to run it in the background
+
 ```
-docker run -d image-name
+docker run -d -P -v /local/project/path:/home/project-folder image-name-id
 ```
