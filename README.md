@@ -34,11 +34,15 @@ docker build -t="image-name" /path/to/the/dockerfile
 To run the created image and attach to it at the same time:
 
 ```
-docker run -P -v /local/project/path:/home/project-folder -it image-name-id
+docker run -p ports:ports -v /local/project/path:/home/project-folder -it image-name-id
 ```
 
 Or to run it in the background
 
 ```
-docker run -d -P -v /local/project/path:/home/project-folder image-name-id
+docker run -d -p ports:ports -v /local/project/path:/home/project-folder image-name-id
 ```
+
+#Credits
+
+Apache2 configuration script: https://github.com/denissonleal/configure-apache
