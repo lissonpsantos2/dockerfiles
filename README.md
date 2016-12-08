@@ -27,9 +27,9 @@ docker build -t="image-name" /path/to/the/dockerfile
 Then to run that image and attach to it at the same time:
 
 ```
-docker run -i -t rethinkdb
+docker run -i -t image-name
 ```
 Or to run it in the background
 ```
-docker run -d rethinkdb
+docker run -d image-name
 ```
