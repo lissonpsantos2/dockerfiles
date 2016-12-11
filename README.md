@@ -1,10 +1,9 @@
-##A default debian PHP5 dockerfile
+##Dockerfiles to create complete images for software development
 
-A default dockerfile to build a complete image for development
+A debian:jessie based image with PHP5 and a ubuntu:16.04 based image with PHP7.0
 
 #Installed Packages
 
-* PHP5
 * APACHE2
 * COMPOSER
 * NPM
@@ -13,6 +12,9 @@ A default dockerfile to build a complete image for development
 * PHONEGAP
 * GIT
 * NODE
+
+#Installed Tools
+
 * CURL
 * WGET
 * NANO
@@ -30,16 +32,16 @@ To build an image with docker is pretty simple:
 docker build -t="image-name:version" /path/to/the/dockerfile
 ```
 
-#RUN
+#Run
 
 To run the created image and attach to it at the same time:
 
 ```
-docker run -p ports:ports -v /local/project/path:/home/project-folder -it image-name-id
+docker run -p ports:ports -v /local/"project-path":/home/project-folder -it image-name-id
 ```
 
 Or to run it in the background
 
 ```
-docker run -d -p ports:ports -v /local/project/path:/home/project-folder image-name-id
+docker run -d -p ports:ports -v /local/"project-path":/home/project-folder image-name-id
 ```
