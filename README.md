@@ -1,4 +1,4 @@
-##A default debian dockerfile
+##A default debian PHP5 dockerfile
 
 A default dockerfile to build a complete image for development
 
@@ -8,12 +8,13 @@ A default dockerfile to build a complete image for development
 * APACHE2
 * COMPOSER
 * NPM
-* NODE
 * BOWER
 * GULP
 * PHONEGAP
-
-
+* GIT
+* NODE
+* CURL
+* WGET
 * NANO
 * VIM
 * HTOP
@@ -26,7 +27,7 @@ Use with Docker http://www.docker.io
 To build an image with docker is pretty simple:
 
 ```
-docker build -t="image-name" /path/to/the/dockerfile
+docker build -t="image-name:version" /path/to/the/dockerfile
 ```
 
 #RUN
@@ -42,7 +43,3 @@ Or to run it in the background
 ```
 docker run -d -p ports:ports -v /local/project/path:/home/project-folder image-name-id
 ```
-
-#Credits
-
-Apache2 configuration script: https://github.com/denissonleal/configure-apache
