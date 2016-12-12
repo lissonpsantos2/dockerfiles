@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>
+MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Denisson Leal <denissonleal@gmail.com>
 
 #CREATE PROJECT FOLDER
 RUN mkdir /home/project-folder
@@ -16,6 +16,9 @@ RUN apt-get install -y php7.0 \
   php-imagick \
   php7.0-mysql \
   php7.0-dev \
+  php7.0-zip \
+  php7.0-mbstring \
+  php-mongodb \
   apache2 \
   libapache2-mod-php7.0 \
   git \
