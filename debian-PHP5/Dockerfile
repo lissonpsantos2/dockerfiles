@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>
+MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Denisson Leal <denissonleal@gmail.com>
 
 #CREATE PROJECT FOLDER
 RUN mkdir /home/project-folder
@@ -17,6 +17,8 @@ RUN apt-get install -y php5 \
   php5-mysql \
   php5-cli \
   php5-dev \
+  php5-gd \
+  libxrender1 \
   apache2 \
   libapache2-mod-php5 \
   curl \

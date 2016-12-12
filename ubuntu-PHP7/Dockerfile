@@ -19,8 +19,10 @@ RUN apt-get install -y php7.0 \
   php7.0-zip \
   php7.0-mbstring \
   php-mongodb \
+  libxrender1 \
   apache2 \
   libapache2-mod-php7.0 \
+  curl \
   git \
   wget \
   npm \
