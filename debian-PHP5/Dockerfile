@@ -18,6 +18,7 @@ RUN apt-get install -y php5 \
   php5-cli \
   php5-dev \
   php5-gd \
+  php5-mongodb \
   libxrender1 \
   apache2 \
   libapache2-mod-php5 \
@@ -31,6 +32,7 @@ RUN apt-get install -y php5 \
 
 RUN npm cache clean -f
 RUN npm install n -g
+RUN n 4.*
 RUN n stable
 RUN npm install bower -g
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
