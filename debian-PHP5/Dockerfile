@@ -18,7 +18,7 @@ RUN apt-get install -y php5 \
   php5-cli \
   php5-dev \
   php5-gd \
-  php5-mongodb \
+  php5-mongo \
   libxrender1 \
   apache2 \
   libapache2-mod-php5 \
