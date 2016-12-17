@@ -28,17 +28,18 @@ RUN apt-get install -y php5 \
   npm \
   nano \
   vim \
-  htop
+  htop \
+  bash_completion
 
 RUN npm cache clean -f
 RUN npm install n -g
-RUN n 4.*
 RUN n stable
+RUN n 4.*
 RUN npm install bower -g
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 RUN npm install gulp -g
 RUN npm install phonegap -g
-
+RUN a2enmod rewrite
 
 #COMPOSER INSTALL
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -52,3 +53,9 @@ ENV PATH /usr/sbin:$PATH
 ENV PATH /usr/bin:$PATH
 ENV PATH /usr/local/sbin:$PATH
 ENV PATH /usr/local/bin:$PATH
+
+# APACHE CONFIG
+ADD apache.conf /etc/apache2/sites-enabled/000-default.conf
+
+# BASHRC STYLE
+ADD bashrc /root/.bashrc

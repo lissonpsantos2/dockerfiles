@@ -1,0 +1,20 @@
+export TZ=America/Bahia
+
+echo '   _ '
+echo '  *v* *** BEM VINDO AO debian-php5 ***'
+echo ' /(_)\ '
+echo '  ^ ^ ' `date`
+
+echo 'remember to run: ln -s /home/project-folder/{your-project}/public /var/www/dev && service apache2 start'
+
+export PS1="[\[\e[33m\]docker\[\e[m\]] \W # "
+
+alias ls='ls --color=auto'
+
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
