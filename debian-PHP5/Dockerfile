@@ -29,7 +29,7 @@ RUN apt-get install -y php5 \
   nano \
   vim \
   htop \
-  bash_completion
+  bash-completion
 
 RUN npm cache clean -f
 RUN npm install n -g
