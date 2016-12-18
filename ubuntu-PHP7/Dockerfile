@@ -23,7 +23,6 @@ RUN apt-get install -y php7.0 \
   libxrender1 \
   apache2 \
   libapache2-mod-php7.0 \
-  curl \
   git \
   wget \
   npm \
@@ -34,12 +33,10 @@ RUN apt-get install -y php7.0 \
 
 RUN npm cache clean -f
 RUN npm install n -g
-RUN n stable
 RUN n 4.*
 RUN npm install bower -g
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 RUN npm install gulp -g
-RUN npm install phonegap -g
 RUN a2enmod rewrite
 
 #COMPOSER INSTALL
