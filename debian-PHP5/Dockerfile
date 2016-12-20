@@ -53,7 +53,7 @@ ENV PATH /usr/local/sbin:$PATH
 ENV PATH /usr/local/bin:$PATH
 
 # APACHE CONFIG
-ADD apache.conf /etc/apache2/sites-enabled/000-default.conf
+RUN curl -o /etc/apache2/sites-enabled/000-default.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/apache.conf
 
 # BASHRC STYLE
-ADD bashrc /root/.bashrc
+run curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/bashrc
