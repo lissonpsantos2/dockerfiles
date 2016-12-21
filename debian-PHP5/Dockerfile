@@ -23,6 +23,7 @@ RUN apt-get install -y php5 \
   apache2 \
   libapache2-mod-php5 \
   git \
+  curl \
   wget \
   npm \
   nano \
