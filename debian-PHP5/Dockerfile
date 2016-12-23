@@ -54,7 +54,7 @@ ENV PATH /usr/local/sbin:$PATH
 ENV PATH /usr/local/bin:$PATH
 
 # APACHE CONFIG
-RUN curl -o /etc/apache2/sites-enabled/000-default.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/apache.conf
+RUN curl -o /etc/apache2/sites-enabled/000-default.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/apache.conf #redo
 
 # BASHRC STYLE
-RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/bashrc
+RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/bashrc #redo
