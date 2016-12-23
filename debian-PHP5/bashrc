@@ -1,13 +1,13 @@
 export TZ=America/Bahia
 
 echo '   _ '
-echo '  *v* *** BEM VINDO AO debian-php5 ***'
+echo '  *v* *** WELCOME TO Debian-PHP5 ***'
 echo ' /(_)\ '
 echo '  ^ ^ ' `date`
 
 echo 'remember to run: ln -s /home/project-folder/{your-project}/public /var/www/dev && service apache2 start'
 
-export PS1="[\[\e[33m\]docker\[\e[m\]] \W # "
+export PS1="\[$(tput bold)\][\[\e[33m\]docker\[\e[m\]\[$(tput bold)\]] \[$(tput bold)\]\[\033[38;5;4m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\$ "
 
 alias ls='ls --color=auto'
 

@@ -17,19 +17,20 @@ RUN apt-get install -y php7.0 \
   php7.0-mysql \
   php7.0-dev \
   php7.0-zip \
-	php7.0-gd \
+  php7.0-gd \
   php7.0-mbstring \
   php-mongodb \
   libxrender1 \
   apache2 \
   libapache2-mod-php7.0 \
   git \
+  curl \
   wget \
   npm \
   nano \
   vim \
   htop \
-	bash-completion
+  bash-completion
 
 RUN npm cache clean -f
 RUN npm install n -g
@@ -53,7 +54,7 @@ ENV PATH /usr/local/sbin:$PATH
 ENV PATH /usr/local/bin:$PATH
 
 # APACHE CONFIG
-ADD apache.conf /etc/apache2/sites-enabled/000-default.conf
+RUN curl -o /etc/apache2/sites-enabled/000-default.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/apache.conf
 
 # BASHRC STYLE
-ADD bashrc /root/.bashrc
+RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/bashrc
