@@ -7,6 +7,7 @@ RUN mkdir /home/PEC
 
 #SET WORKDIR PEC 2.1 FOLDER
 WORKDIR /home/PEC
+RUN apt-get install -y curl
 
 #BASHRC STYLE
 RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/bashrc #redo
