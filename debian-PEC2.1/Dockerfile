@@ -39,3 +39,7 @@ RUN curl -o /etc/locale.gen https://raw.githubusercontent.com/lissonpsantos2/doc
 
 #JAVA.CONF FILE
 RUN curl -o /etc/java.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.1/javaconf #redo
+
+
+RUN apt-get install -y locales
+RUN locale-gen
