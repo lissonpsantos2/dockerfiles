@@ -30,7 +30,9 @@ RUN apt-get install -y php7.0 \
   nano \
   vim \
   htop \
-  bash-completion
+  bash-completion \
+  sudo \
+  mysql-client
 
 RUN npm cache clean -f
 RUN npm install n -g

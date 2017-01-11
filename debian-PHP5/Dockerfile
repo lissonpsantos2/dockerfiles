@@ -29,7 +29,9 @@ RUN apt-get install -y php5 \
   nano \
   vim \
   htop \
-  bash-completion
+  bash-completion \
+  sudo \
+  mysql-client
 
 RUN npm cache clean -f
 RUN npm install n -g
