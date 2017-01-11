@@ -5,7 +5,9 @@ echo '  *v* *** WELCOME TO PEC2.1 IMAGE ***'
 echo ' /(_)\ '
 echo '  ^ ^ ' `date`
 
-export PS1="\[$(tput bold)\][\[\e[33m\]docker\[\e[m\]\[$(tput bold)\]] \[$(tput bold)\]\[\033[38;5;4m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]$(__git_ps1)\$ "
+echo 'Para iniciar o PEC2.1: sh /opt/e-SUS/jboss-as-7.2.0.Final/bin/init.d/jboss-as-standalone-lsb.sh start';
+
+export PS1="\[$(tput bold)\][\[\e[33m\]docker\[\e[m\]\[$(tput bold)\]] \[$(tput bold)\]\[\033[38;5;4m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\$(__git_ps1)\$ "
 
 alias ls='ls --color=auto'
 

@@ -47,4 +47,5 @@ RUN curl -o /etc/java.conf https://raw.githubusercontent.com/lissonpsantos2/dock
 RUN apt-get install -y locales
 RUN locale-gen
 RUN sh instalador_linux.sh
-RUN sh /opt/e-SUS/jboss-as-7.2.0.Final/bin/init.d/jboss-as-standalone-lsb.sh start
+
+WORKDIR /
