@@ -16,6 +16,8 @@ RUN apt-get upgrade -y
 RUN apt-get install -y wget \
   openjdk-7-jdk \
   nano \
+  vim \
+  git \
   sudo \
   curl \
   bash-completion \
@@ -36,7 +38,7 @@ ENV PATH /usr/local/sbin:$PATH
 ENV PATH /usr/local/bin:$PATH
 
 #BASHRC STYLE
-RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PHP5/bashrc #redo
+RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.1/bashrc #redo
 
 #LOCALE PT_BR
 RUN curl -o /etc/locale.gen https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.1/locale #redo
