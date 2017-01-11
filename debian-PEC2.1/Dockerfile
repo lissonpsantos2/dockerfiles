@@ -19,6 +19,7 @@ RUN apt-get install -y wget \
   vim \
   git \
   sudo \
+  htop \
   curl \
   bash-completion \
   unzip
