@@ -15,13 +15,17 @@ RUN apt-get upgrade -y
 #INSTALL PACKAGES
 RUN apt-get install -y wget \
   openjdk-7-jdk \
-
+  nano \
+  sudo \
   curl \
   bash-completion \
   unzip
 
 #PEC INSTALL
-#RUN wget http://189.28.128.100/dab/docs/portaldab/aplicativos/Instalador-eSUS-AB-PEC-2.1.08_linux_20122016.zip
+RUN wget http://189.28.128.100/dab/docs/portaldab/aplicativos/Instalador-eSUS-AB-PEC-2.1.08-Treinamento-Linux_20122016.zip
+RUN unzip Instalador-eSUS-AB-PEC-2.1.08-Treinamento-Linux_20122016.zip -d /home/PEC/install
+WORKDIR /home/PEC/install
+
 
 #ENV VARIABLES
 ENV PATH /sbin:$PATH
@@ -40,6 +44,7 @@ RUN curl -o /etc/locale.gen https://raw.githubusercontent.com/lissonpsantos2/doc
 #JAVA.CONF FILE
 RUN curl -o /etc/java.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.1/javaconf #redo
 
-
 RUN apt-get install -y locales
 RUN locale-gen
+RUN sh instalador_linux.sh
+RUN sh /opt/e-SUS/jboss-as-7.2.0.Final/bin/init.d/jboss-as-standalone-lsb.sh start
