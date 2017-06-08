@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Denisson Leal <denissonleal@gmail.com>, Geidson Benicio <geidsonc@gmail.com>
+MAINTAINER Alison Pereira dos Santos <lissonpsantos2@gmail.com>, Denisson Leal <denissonleal@gmail.com>, Geidson Benicio <geidsonc@gmail.com>
 
 #CREATE PROJECT FOLDER
 RUN mkdir /home/project-folder
