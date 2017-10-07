@@ -25,7 +25,7 @@ RUN apt-get install -y wget \
   unzip
 
 #PEC INSTALL
-RUN http://189.28.128.100/dab/docs/portaldab/aplicativos/Instalador-eSUS-AB-PEC-2.2.09-Treinamento-Linux_18092017.zip
+RUN wget http://189.28.128.100/dab/docs/portaldab/aplicativos/Instalador-eSUS-AB-PEC-2.2.09-Treinamento-Linux_18092017.zip
 RUN unzip Instalador-eSUS-AB-PEC-2.2.09-Treinamento-Linux_18092017.zip -d /home/PEC/install
 WORKDIR /home/PEC/install
 
@@ -39,13 +39,13 @@ ENV PATH /usr/local/sbin:$PATH
 ENV PATH /usr/local/bin:$PATH
 
 #BASHRC STYLE
-RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.1/bashrc #redo
+RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.2/bashrc #redo
 
 #LOCALE PT_BR
-RUN curl -o /etc/locale.gen https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.1/locale #redo
+RUN curl -o /etc/locale.gen https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.2/locale #redo
 
 #JAVA.CONF FILE
-RUN curl -o /etc/java.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.1/javaconf #redo
+RUN curl -o /etc/java.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-PEC2.2/javaconf #redo
 
 RUN apt-get install -y locales
 RUN locale-gen
