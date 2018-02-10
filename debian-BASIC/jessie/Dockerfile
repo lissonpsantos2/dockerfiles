@@ -12,6 +12,7 @@ RUN apt-get upgrade -y
 
 #INSTALL PACKAGES
 RUN apt-get install -y wget \
+  software-properties-common \
   bash-completion \
   apache2 \
   unzip \
@@ -24,6 +25,6 @@ RUN apt-get install -y wget \
   npm
 
 #BASIC STYLE
-RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-BASIC/jessie/bashrc #redo
+RUN curl -o /root/.bashrc https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/debian-BASIC/bashrc #redo
 
 WORKDIR /
