@@ -6,7 +6,7 @@ MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>
 ENV PROJECT_FOLDER /home/project-folder
 ENV IMAGE_ALIAS PHONEGAP
 ENV SEPARATOR -
-ENV INFO_IMAGE go to ${PROJECT_FOLDER} and run phonegap
+ENV INFO_IMAGE "go to ${PROJECT_FOLDER} and run phonegap"
 
 #ANDROID SDK CONFIGURATION VARIABLES
 ENV ANDROID_HOME /sdk
