@@ -6,7 +6,7 @@ MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>
 ENV PROJECT_FOLDER /home/project-folder
 ENV IMAGE_ALIAS PHPs
 ENV SEPARATOR -
-ENV INFO_IMAGE "RUN selectphp <PHPVERSION> to choose the desired PHP version {5.6, 7.0, 7.1} and \n remember to run: ln -s /home/project-folder/{your-project}/public /var/www/dev && service apache2 start"
+ENV INFO_IMAGE "RUN selectphp <PHPVERSION> to choose the desired PHP version {5.6, 7.0, 7.1} and \r\n remember to run: ln -s /home/project-folder/{your-project}/public /var/www/dev && service apache2 start"
 
 #ADD PHP REPO
 RUN apt-get install -y language-pack-en-base
