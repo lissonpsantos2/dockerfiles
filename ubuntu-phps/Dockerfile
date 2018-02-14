@@ -11,9 +11,6 @@ ENV INFO_IMAGE "RODAR .sh"
 #ADD PHP REPO
 RUN apt-get install -y language-pack-en-base
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
-# RUN add-apt-repository ppa:ondrej/php
-# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
-
 
 #INSTALL PHP VERSIONS
 RUN apt-get update
@@ -44,4 +41,7 @@ RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');"
 
 #SELECTPHP SCRIPT
-RUN curl -o /usr/local/bin/selectphp.sh https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu/selectphp.sh #redo
+RUN curl -o /usr/local/bin/selectphp https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu/selectphp.sh #redo
+RUN cd /usr/local/bin/ && chmod +x selectphp
+
+WORKDIR /
