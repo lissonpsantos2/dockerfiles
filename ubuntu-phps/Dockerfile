@@ -6,7 +6,7 @@ MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>
 ENV PROJECT_FOLDER /home/project-folder
 ENV IMAGE_ALIAS PHPs
 ENV SEPARATOR -
-ENV INFO_IMAGE "RODAR .sh"
+ENV INFO_IMAGE "RUN selectphp <PHPVERSION> to choose the desired PHP version {5.6, 7.0, 7.1}"
 
 #ADD PHP REPO
 RUN apt-get install -y language-pack-en-base
