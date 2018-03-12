@@ -13,7 +13,7 @@ RUN apt-get install -y language-pack-en-base
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
 #INSTALL PHP VERSIONS
-RUN apt-get update
+RUN apt-get update && apt-get upgrade
 RUN apt -y install php5.6
 RUN apt -y install php7.0
 RUN apt -y install php7.1
@@ -21,14 +21,23 @@ RUN apt -y install php7.1
 #INSTALL PHP5.6 PACKAGES
 RUN apt-get -y install php5.6-mbstring
 RUN apt-get -y install php5.6-xml
+RUN apt-get -y install php5.6-curl
+RUN apt-get -y install php5.6-mysql
+RUN apt-get -y install php5.6-pgsql
 
 #INSTALL PHP7.0 PACKAGES
 RUN apt-get -y install php7.0-mbstring
 RUN apt-get -y install php7.0-xml
+RUN apt-get -y install php7.0-curl
+RUN apt-get -y install php7.0-mysql
+RUN apt-get -y install php7.0-pgsql
 
 #INSTALL PHP7.1 PACKAGES
 RUN apt-get -y install php7.1-mbstring
 RUN apt-get -y install php7.1-xml
+RUN apt-get -y install php7.1-curl
+RUN apt-get -y install php7.1-mysql
+RUN apt-get -y install php7.1-pgsql
 
 
 RUN apt-get -y install libxrender1
@@ -41,6 +50,13 @@ RUN apt-get -y install php-mongo
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');"
+
+#INSTALL NPM
+RUN apt-get install -y npm
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+RUN apt-get install -y nodejs
+RUN npm install -g n
+RUN n 8.*
 
 #SELECTPHP SCRIPT
 RUN curl -o /usr/local/bin/selectphp https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/selectphp.sh #redo
