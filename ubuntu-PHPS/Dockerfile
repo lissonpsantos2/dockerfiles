@@ -13,7 +13,7 @@ RUN apt-get install -y language-pack-en-base
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
 #INSTALL PHP VERSIONS
-RUN apt-get update && apt-get upgrade
+RUN apt-get update && apt-get upgrade -y
 RUN apt -y install php5.6
 RUN apt -y install php7.0
 RUN apt -y install php7.1
