@@ -6,7 +6,7 @@ MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>
 ENV PROJECT_FOLDER /home/project-folder
 ENV IMAGE_ALIAS PHPs
 ENV SEPARATOR -
-ENV INFO_IMAGE "RUN selectphp <PHPVERSION> to choose the desired PHP version {5.6, 7.0, 7.1} and \r\n remember to run: ln -s /home/project-folder/{your-project}/public /var/www/dev && service apache2 start"
+ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.0, 7.1} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
 
 #ADD PHP REPO
 RUN apt-get install -y language-pack-en-base
@@ -56,11 +56,16 @@ RUN apt-get install -y npm
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN npm install -g n
+RUN npm install -g gulp
 RUN n 8.*
 
 #SELECTPHP SCRIPT
 RUN curl -o /usr/local/bin/selectphp https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/selectphp.sh #redo
 RUN cd /usr/local/bin/ && chmod +x selectphp
+
+#APACHELINKER SCRIPT
+RUN curl -o /usr/local/bin/apachelinker https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/apachelinker.sh #redo
+RUN cd /usr/local/bin/ && chmod +x apachelinker
 
 # APACHE CONFIG
 RUN a2enmod rewrite
