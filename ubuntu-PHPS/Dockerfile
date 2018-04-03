@@ -24,6 +24,7 @@ RUN apt-get -y install php5.6-xml
 RUN apt-get -y install php5.6-curl
 RUN apt-get -y install php5.6-mysql
 RUN apt-get -y install php5.6-pgsql
+RUN apt-get -y install php5.6-imagick
 
 #INSTALL PHP7.0 PACKAGES
 RUN apt-get -y install php7.0-mbstring
@@ -31,6 +32,7 @@ RUN apt-get -y install php7.0-xml
 RUN apt-get -y install php7.0-curl
 RUN apt-get -y install php7.0-mysql
 RUN apt-get -y install php7.0-pgsql
+RUN apt-get -y install php7.0-imagick
 
 #INSTALL PHP7.1 PACKAGES
 RUN apt-get -y install php7.1-mbstring
@@ -38,7 +40,7 @@ RUN apt-get -y install php7.1-xml
 RUN apt-get -y install php7.1-curl
 RUN apt-get -y install php7.1-mysql
 RUN apt-get -y install php7.1-pgsql
-
+RUN apt-get -y install php7.1-imagick
 
 RUN apt-get -y install libxrender1
 RUN apt-get -y install libfontconfig1
