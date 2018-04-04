@@ -56,6 +56,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');"
 
+RUN apt-get update
+
 #INSTALL NPM
 RUN apt-get install -y npm
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
