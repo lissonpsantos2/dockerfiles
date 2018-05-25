@@ -26,6 +26,7 @@ RUN apt-get -y install php5.6-mysql
 RUN apt-get -y install php5.6-pgsql
 RUN apt-get -y install php5.6-imagick
 RUN apt-get -y install php5.6-mcrypt
+RUN apt-get -y install php5.6-zip
 
 #INSTALL PHP7.0 PACKAGES
 RUN apt-get -y install php7.0-mbstring
@@ -35,6 +36,7 @@ RUN apt-get -y install php7.0-mysql
 RUN apt-get -y install php7.0-pgsql
 RUN apt-get -y install php7.0-imagick
 RUN apt-get -y install php7.0-mcrypt
+RUN apt-get -y install php7.0-zip
 
 #INSTALL PHP7.1 PACKAGES
 RUN apt-get -y install php7.1-mbstring
@@ -44,6 +46,7 @@ RUN apt-get -y install php7.1-mysql
 RUN apt-get -y install php7.1-pgsql
 RUN apt-get -y install php7.1-imagick
 RUN apt-get -y install php7.1-mcrypt
+RUN apt-get -y install php7.1-zip
 
 RUN apt-get -y install libxrender1
 RUN apt-get -y install libfontconfig1
@@ -64,6 +67,7 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN npm install -g n
 RUN npm install -g gulp
+RUN npm install -g npm@latest
 RUN n 8.*
 
 #SELECTPHP SCRIPT
