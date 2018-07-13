@@ -9,7 +9,7 @@ if [ "$SELECTED" = "7.2" ]; then
   a2dismod php5.6
   a2enmod php7.2
   service apache2 restart
-	echo "PHP 7.1 ACTIVATED!"
+	echo "PHP 7.2 ACTIVATED!"
   exit 0
 fi
 
