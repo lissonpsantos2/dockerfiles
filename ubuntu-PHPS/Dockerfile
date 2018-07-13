@@ -47,6 +47,7 @@ RUN apt-get -y install php7.1-mysql
 RUN apt-get -y install php7.1-pgsql
 RUN apt-get -y install php7.1-imagick
 RUN apt-get -y install php7.1-mcrypt
+-RUN apt-get -y install php7.1-zip
 
 #INSTALL PHP7.2 PACKAGES
 RUN apt-get -y install php7.2-mbstring
