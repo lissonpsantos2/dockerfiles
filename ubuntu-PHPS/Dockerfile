@@ -1,6 +1,6 @@
 from lissonpsantos2/ubuntu-16.04-basic:latest
 
-MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>
+MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silva <esron.dtamar@gmail.com>
 
 #IMAGE VARIABLES
 ENV PROJECT_FOLDER /home/project-folder
