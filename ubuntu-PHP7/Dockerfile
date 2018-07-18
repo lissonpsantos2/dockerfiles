@@ -32,11 +32,12 @@ RUN apt-get install -y php7.0 \
   htop \
   bash-completion \
   sudo \
-  mysql-client
+  mysql-client \
+  vim
 
 RUN npm cache clean -f
 RUN npm install n -g
-RUN n 4.*
+RUN n latest
 RUN npm install bower -g
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 RUN npm install gulp -g
