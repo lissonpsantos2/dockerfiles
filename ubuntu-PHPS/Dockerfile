@@ -1,12 +1,12 @@
 from lissonpsantos2/ubuntu-16.04-basic:latest
 
-MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>
+MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silva <esron.dtamar@gmail.com>
 
 #IMAGE VARIABLES
 ENV PROJECT_FOLDER /home/project-folder
 ENV IMAGE_ALIAS PHPs
 ENV SEPARATOR -
-ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.0, 7.1} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
+ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.0, 7.1, 7.2} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
 
 #ADD PHP REPO
 RUN apt-get install -y language-pack-en-base
@@ -17,6 +17,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt -y install php5.6
 RUN apt -y install php7.0
 RUN apt -y install php7.1
+RUN apt -y install php7.2
 
 #INSTALL PHP5.6 PACKAGES
 RUN apt-get -y install php5.6-mbstring
@@ -48,6 +49,15 @@ RUN apt-get -y install php7.1-imagick
 RUN apt-get -y install php7.1-mcrypt
 RUN apt-get -y install php7.1-zip
 
+#INSTALL PHP7.2 PACKAGES
+RUN apt-get -y install php7.2-mbstring
+RUN apt-get -y install php7.2-xml
+RUN apt-get -y install php7.2-curl
+RUN apt-get -y install php7.2-mysql
+RUN apt-get -y install php7.2-pgsql
+RUN apt-get -y install php7.2-imagick
+RUN apt-get -y install php7.2-zip
+
 RUN apt-get -y install libxrender1
 RUN apt-get -y install libfontconfig1
 RUN apt-get -y install libxtst6
@@ -71,15 +81,15 @@ RUN npm install -g npm@latest
 RUN n 8.*
 
 #SELECTPHP SCRIPT
-RUN curl -o /usr/local/bin/selectphp https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/selectphp.sh #redo
+ADD selectphp.sh /usr/local/bin/selectphp
 RUN cd /usr/local/bin/ && chmod +x selectphp
 
 #APACHELINKER SCRIPT
-RUN curl -o /usr/local/bin/apachelinker https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/apachelinker.sh #redo
+ADD apachelinker.sh /usr/local/bin/apachelinker
 RUN cd /usr/local/bin/ && chmod +x apachelinker
 
 # APACHE CONFIG
 RUN a2enmod rewrite
-RUN curl -o /etc/apache2/sites-enabled/000-default.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/apache.conf #redo
+ADD apache.conf /etc/apache2/sites-enabled/000-default.conf
 
 WORKDIR /

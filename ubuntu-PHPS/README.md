@@ -1,6 +1,6 @@
 ## UBUNTU Dockerfiles
 
-On this repository you can find the ubuntu **Dockerfile** with support to run php7.1 or php7.0 or php5.6.
+On this repository you can find the ubuntu **Dockerfile** with support to run php7.2, php7.1, php7.0 or php5.6.
 
 ### Installation
 
