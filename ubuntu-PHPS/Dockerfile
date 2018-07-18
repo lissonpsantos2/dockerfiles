@@ -81,15 +81,15 @@ RUN npm install -g npm@latest
 RUN n 8.*
 
 #SELECTPHP SCRIPT
-ADD selectphp.sh /usr/local/bin/selectphp
+RUN curl -o /usr/local/bin/selectphp https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/selectphp.sh #redo
 RUN cd /usr/local/bin/ && chmod +x selectphp
 
 #APACHELINKER SCRIPT
-ADD apachelinker.sh /usr/local/bin/apachelinker
+RUN curl -o /usr/local/bin/apachelinker https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/apachelinker.sh #redo
 RUN cd /usr/local/bin/ && chmod +x apachelinker
 
 # APACHE CONFIG
 RUN a2enmod rewrite
-ADD apache.conf /etc/apache2/sites-enabled/000-default.conf
+RUN curl -o /etc/apache2/sites-enabled/000-default.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/apache.conf #redo
 
 WORKDIR /
