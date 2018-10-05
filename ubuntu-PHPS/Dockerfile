@@ -1,6 +1,6 @@
-from lissonpsantos2/ubuntu-16.04-basic:latest
+FROM lissonpsantos2/ubuntu-16.04-basic:latest
 
-MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silva <esron.dtamar@gmail.com>
+LABEL authors="Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silva <esron.dtamar@gmail.com>"
 
 #IMAGE VARIABLES
 ENV PROJECT_FOLDER /home/project-folder
