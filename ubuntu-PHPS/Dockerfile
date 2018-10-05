@@ -15,7 +15,6 @@ RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 #INSTALL PHP VERSIONS
 RUN apt-get update && apt-get upgrade -y
 RUN apt -y install php5.6
-RUN apt -y install php7.0
 RUN apt -y install php7.1
 RUN apt -y install php7.2
 
@@ -28,16 +27,6 @@ RUN apt-get -y install php5.6-pgsql
 RUN apt-get -y install php5.6-imagick
 RUN apt-get -y install php5.6-mcrypt
 RUN apt-get -y install php5.6-zip
-
-#INSTALL PHP7.0 PACKAGES
-RUN apt-get -y install php7.0-mbstring
-RUN apt-get -y install php7.0-xml
-RUN apt-get -y install php7.0-curl
-RUN apt-get -y install php7.0-mysql
-RUN apt-get -y install php7.0-pgsql
-RUN apt-get -y install php7.0-imagick
-RUN apt-get -y install php7.0-mcrypt
-RUN apt-get -y install php7.0-zip
 
 #INSTALL PHP7.1 PACKAGES
 RUN apt-get -y install php7.1-mbstring
@@ -81,15 +70,15 @@ RUN npm install -g npm@latest
 RUN n 8.*
 
 #SELECTPHP SCRIPT
-ADD selectphp.sh /usr/local/bin/selectphp
+ADD https://gist.githubusercontent.com/esron/7857d0d6d7fe516639aa4be65635bb32/raw/48499b1fc9151666f5d95ad333d224796563a99e/selectphp.sh /usr/local/bin/selectphp
 RUN cd /usr/local/bin/ && chmod +x selectphp
 
 #APACHELINKER SCRIPT
-ADD apachelinker.sh /usr/local/bin/apachelinker
+ADD https://gist.githubusercontent.com/esron/7857d0d6d7fe516639aa4be65635bb32/raw/48499b1fc9151666f5d95ad333d224796563a99e/apachelinker.sh /usr/local/bin/apachelinker
 RUN cd /usr/local/bin/ && chmod +x apachelinker
 
 # APACHE CONFIG
 RUN a2enmod rewrite
-ADD apache.conf /etc/apache2/sites-enabled/000-default.conf
+ADD https://gist.githubusercontent.com/esron/7857d0d6d7fe516639aa4be65635bb32/raw/48499b1fc9151666f5d95ad333d224796563a99e/apache.conf /etc/apache2/sites-enabled/000-default.conf
 
 WORKDIR /
