@@ -1,6 +1,6 @@
-from lissonpsantos2/ubuntu-18.04-basic:latest
+FROM lissonpsantos2/ubuntu-18.04-basic:latest
 
-MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silva <esron.dtamar@gmail.com>
+LABEL authors="Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silva <esron.dtamar@gmail.com>"
 
 #IMAGE VARIABLES
 ENV PROJECT_FOLDER /home/project-folder
@@ -18,7 +18,6 @@ RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 #INSTALL PHP VERSIONS
 RUN apt-get update && apt-get upgrade -y
 RUN apt -y install php5.6
-RUN apt -y install php7.0
 RUN apt -y install php7.1
 RUN apt -y install php7.2
 
@@ -31,16 +30,6 @@ RUN apt-get -y install php5.6-pgsql
 RUN apt-get -y install php5.6-imagick
 RUN apt-get -y install php5.6-mcrypt
 RUN apt-get -y install php5.6-zip
-
-#INSTALL PHP7.0 PACKAGES
-RUN apt-get -y install php7.0-mbstring
-RUN apt-get -y install php7.0-xml
-RUN apt-get -y install php7.0-curl
-RUN apt-get -y install php7.0-mysql
-RUN apt-get -y install php7.0-pgsql
-RUN apt-get -y install php7.0-imagick
-RUN apt-get -y install php7.0-mcrypt
-RUN apt-get -y install php7.0-zip
 
 #INSTALL PHP7.1 PACKAGES
 RUN apt-get -y install php7.1-mbstring
