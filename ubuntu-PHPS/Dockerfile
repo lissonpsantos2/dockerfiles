@@ -1,4 +1,4 @@
-from lissonpsantos2/ubuntu-16.04-basic:latest
+from lissonpsantos2/ubuntu-18.04-basic:latest
 
 MAINTAINER Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silva <esron.dtamar@gmail.com>
 
@@ -7,8 +7,11 @@ ENV PROJECT_FOLDER /home/project-folder
 ENV IMAGE_ALIAS PHPs
 ENV SEPARATOR -
 ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.0, 7.1, 7.2} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
+ENV TZ=America/Fortaleza
 
 #ADD PHP REPO
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get install -y language-pack-en-base
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
@@ -73,12 +76,12 @@ RUN apt-get update
 
 #INSTALL NPM
 RUN apt-get install -y npm
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN npm install -g n
 RUN npm install -g gulp
 RUN npm install -g npm@latest
-RUN n 8.*
+RUN n latest
 
 #SELECTPHP SCRIPT
 RUN curl -o /usr/local/bin/selectphp https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/selectphp.sh #redo

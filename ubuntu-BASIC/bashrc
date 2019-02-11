@@ -5,7 +5,7 @@ echo "  *v* *** ${IMAGE_ALIAS} ***"
 echo " /(_)\ "
 echo "  ^ ^  " `date`
 
-echo ${INFO_IMAGE}
+echo -e ${INFO_IMAGE}
 
 export PS1="\[$(tput bold)\][\[\e[33m\]${BASE_IMAGE}${SEPARATOR}${IMAGE_ALIAS}\[\e[m\]\[$(tput bold)\]] \[$(tput bold)\]\[\033[38;5;4m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\$(__git_ps1) # "
 
