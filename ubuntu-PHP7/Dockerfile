@@ -33,7 +33,8 @@ RUN apt-get install -y php7.0 \
   bash-completion \
   sudo \
   mysql-client \
-  vim
+  vim \
+  cross-env
 
 RUN npm cache clean -f
 RUN npm install n -g
