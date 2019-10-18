@@ -33,15 +33,13 @@ RUN apt-get install -y php7.0 \
   bash-completion \
   sudo \
   mysql-client \
-  vim \
-  cross-env
+  vim
 
 RUN npm cache clean -f
 RUN npm install n -g
 RUN n latest
-RUN npm install bower -g
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
-RUN npm install gulp -g
+RUN npm install gulp cross-env -g
 RUN a2enmod rewrite
 
 #COMPOSER INSTALL
