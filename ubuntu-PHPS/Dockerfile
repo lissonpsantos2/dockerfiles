@@ -6,7 +6,7 @@ LABEL authors="Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silv
 ENV PROJECT_FOLDER /home/project-folder
 ENV IMAGE_ALIAS PHPs
 ENV SEPARATOR -
-ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.0, 7.1, 7.2} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
+ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.1, 7.2, 7.3} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
 ENV TZ=America/Fortaleza
 
 #ADD PHP REPO
@@ -20,6 +20,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt -y install php5.6
 RUN apt -y install php7.1
 RUN apt -y install php7.2
+RUN apt -y install php7.3
 
 #INSTALL PHP5.6 PACKAGES
 RUN apt-get -y install php5.6-mbstring
@@ -49,6 +50,15 @@ RUN apt-get -y install php7.2-mysql
 RUN apt-get -y install php7.2-pgsql
 RUN apt-get -y install php7.2-imagick
 RUN apt-get -y install php7.2-zip
+
+#INSTALL PHP7.3 PACKAGES
+RUN apt-get -y install php7.3-mbstring
+RUN apt-get -y install php7.3-xml
+RUN apt-get -y install php7.3-curl
+RUN apt-get -y install php7.3-mysql
+RUN apt-get -y install php7.3-pgsql
+RUN apt-get -y install php7.3-imagick
+RUN apt-get -y install php7.3-zip
 
 RUN apt-get -y install libxrender1
 RUN apt-get -y install libfontconfig1
