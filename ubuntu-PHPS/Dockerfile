@@ -1,4 +1,4 @@
-FROM lissonpsantos2/ubuntu-18.04-basic:latest
+FROM lissonpsantos2/ubuntu-20.04-basic:latest
 
 LABEL authors="Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silva <esron.dtamar@gmail.com>"
 
@@ -6,7 +6,7 @@ LABEL authors="Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silv
 ENV PROJECT_FOLDER /home/project-folder
 ENV IMAGE_ALIAS PHPs
 ENV SEPARATOR -
-ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.1, 7.2, 7.3} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
+ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.1, 7.2, 7.3, 7.4} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
 ENV TZ=America/Fortaleza
 
 #ADD PHP REPO
@@ -21,6 +21,7 @@ RUN apt -y install php5.6
 RUN apt -y install php7.1
 RUN apt -y install php7.2
 RUN apt -y install php7.3
+RUN apt -y install php7.4
 
 #INSTALL PHP5.6 PACKAGES
 RUN apt-get -y install php5.6-mbstring
@@ -31,6 +32,7 @@ RUN apt-get -y install php5.6-pgsql
 RUN apt-get -y install php5.6-imagick
 RUN apt-get -y install php5.6-mcrypt
 RUN apt-get -y install php5.6-zip
+RUN apt-get -y install php5.6-gd
 
 #INSTALL PHP7.1 PACKAGES
 RUN apt-get -y install php7.1-mbstring
@@ -41,6 +43,7 @@ RUN apt-get -y install php7.1-pgsql
 RUN apt-get -y install php7.1-imagick
 RUN apt-get -y install php7.1-mcrypt
 RUN apt-get -y install php7.1-zip
+RUN apt-get -y install php7.1-gd
 
 #INSTALL PHP7.2 PACKAGES
 RUN apt-get -y install php7.2-mbstring
@@ -50,6 +53,7 @@ RUN apt-get -y install php7.2-mysql
 RUN apt-get -y install php7.2-pgsql
 RUN apt-get -y install php7.2-imagick
 RUN apt-get -y install php7.2-zip
+RUN apt-get -y install php7.2-gd
 
 #INSTALL PHP7.3 PACKAGES
 RUN apt-get -y install php7.3-mbstring
@@ -59,12 +63,19 @@ RUN apt-get -y install php7.3-mysql
 RUN apt-get -y install php7.3-pgsql
 RUN apt-get -y install php7.3-imagick
 RUN apt-get -y install php7.3-zip
+RUN apt-get -y install php7.3-gd
 
-RUN apt-get -y install libxrender1
-RUN apt-get -y install libfontconfig1
-RUN apt-get -y install libxtst6
-RUN apt-get -y install php-mongodb
-RUN apt-get -y install php-mongo
+#INSTALL PHP7.3 PACKAGES
+RUN apt-get -y install php7.4-mbstring
+RUN apt-get -y install php7.4-xml
+RUN apt-get -y install php7.4-curl
+RUN apt-get -y install php7.4-mysql
+RUN apt-get -y install php7.4-pgsql
+RUN apt-get -y install php7.4-imagick
+RUN apt-get -y install php7.4-zip
+RUN apt-get -y install php7.4-gd
+
+RUN apt-get -y install libxrender1 libfontconfig1 libxtst6 php-mongodb php-mongo pngquant
 
 #COMPOSER INSTALL
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -75,10 +86,9 @@ RUN apt-get update
 
 #INSTALL NPM
 RUN apt-get install -y npm
-RUN curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN npm install -g n
-RUN npm install -g gulp
 RUN npm install -g npm@latest
 RUN n latest
 
