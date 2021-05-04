@@ -22,6 +22,7 @@ RUN apt -y install php7.1
 RUN apt -y install php7.2
 RUN apt -y install php7.3
 RUN apt -y install php7.4
+RUN apt -y install php8.0
 
 #INSTALL PHP5.6 PACKAGES
 RUN apt-get -y install php5.6-mbstring
@@ -65,7 +66,7 @@ RUN apt-get -y install php7.3-imagick
 RUN apt-get -y install php7.3-zip
 RUN apt-get -y install php7.3-gd
 
-#INSTALL PHP7.3 PACKAGES
+#INSTALL PHP7.4 PACKAGES
 RUN apt-get -y install php7.4-mbstring
 RUN apt-get -y install php7.4-xml
 RUN apt-get -y install php7.4-curl
@@ -74,6 +75,16 @@ RUN apt-get -y install php7.4-pgsql
 RUN apt-get -y install php7.4-imagick
 RUN apt-get -y install php7.4-zip
 RUN apt-get -y install php7.4-gd
+
+#INSTALL PHP8.0 PACKAGES
+RUN apt-get -y install php8.0-mbstring
+RUN apt-get -y install php8.0-xml
+RUN apt-get -y install php8.0-curl
+RUN apt-get -y install php8.0-mysql
+RUN apt-get -y install php8.0-pgsql
+RUN apt-get -y install php8.0-imagick
+RUN apt-get -y install php8.0-zip
+RUN apt-get -y install php8.0-gd
 
 RUN apt-get -y install libxrender1 libfontconfig1 libxtst6 php-mongodb php-mongo pngquant
 
@@ -86,7 +97,7 @@ RUN apt-get update
 
 #INSTALL NPM
 RUN apt-get install -y npm
-RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN npm install -g n
 RUN npm install -g npm@latest
