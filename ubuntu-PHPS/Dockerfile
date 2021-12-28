@@ -120,4 +120,7 @@ RUN cd /usr/local/bin/ && chmod +x apachelinker
 RUN a2enmod rewrite
 RUN curl -o /etc/apache2/sites-enabled/000-default.conf https://raw.githubusercontent.com/lissonpsantos2/dockerfiles/master/ubuntu-PHPS/apache.conf #redo
 
+# CUSTOM php5.6 .ini file
+COPY ./ini/php5.6.ini /etc/php/5.6/apache2/php.ini
+
 WORKDIR /
