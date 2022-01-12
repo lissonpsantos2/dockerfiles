@@ -14,3 +14,4 @@ RUN apt-get install -y supervisor
 RUN apt-get install -y cron
 RUN apt-get install -y tzdata
 RUN apt-get install -y pngquant
+RUN apt-get install -y envsubst
