@@ -6,7 +6,7 @@ LABEL authors="Alisson Pereira dos Santos <lissonpsantos2@gmail.com>, Esron Silv
 ENV PROJECT_FOLDER /home/project-folder
 ENV IMAGE_ALIAS PHPs
 ENV SEPARATOR -
-ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.1, 7.2, 7.3, 7.4} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
+ENV INFO_IMAGE "RUN selectphp <PHP_VERSION> to choose the desired PHP version {5.6, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1} \r\n RUN apachelinker <PROJECT_PUBLIC_FOLDER> to start the apache server"
 ENV TZ=America/Fortaleza
 
 #ADD PHP REPO
@@ -90,6 +90,17 @@ RUN apt-get -y install php8.0-imagick
 RUN apt-get -y install php8.0-zip
 RUN apt-get -y install php8.0-gd
 RUN apt-get -y install php8.0-mongodb
+
+#INSTALL PHP8.1 PACKAGES
+RUN apt-get -y install php8.1-mbstring
+RUN apt-get -y install php8.1-xml
+RUN apt-get -y install php8.1-curl
+RUN apt-get -y install php8.1-mysql
+RUN apt-get -y install php8.1-pgsql
+RUN apt-get -y install php8.1-imagick
+RUN apt-get -y install php8.1-zip
+RUN apt-get -y install php8.1-gd
+RUN apt-get -y install php8.1-mongodb
 
 RUN apt-get -y install libxrender1 libfontconfig1 libxtst6 php-mongo pngquant
 
