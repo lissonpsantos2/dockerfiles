@@ -1,4 +1,4 @@
-FROM php:7.4.27-apache-buster
+FROM php:8.1.2-apache-buster
 
 RUN apt-get update
 RUN apt-get upgrade -y
