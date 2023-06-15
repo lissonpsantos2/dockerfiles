@@ -23,6 +23,7 @@ RUN apt -y install php7.2
 RUN apt -y install php7.3
 RUN apt -y install php7.4
 RUN apt -y install php8.0
+RUN apt -y install php8.1
 
 #INSTALL PHP5.6 PACKAGES
 RUN apt-get -y install php5.6-mbstring
@@ -34,6 +35,7 @@ RUN apt-get -y install php5.6-imagick
 RUN apt-get -y install php5.6-mcrypt
 RUN apt-get -y install php5.6-zip
 RUN apt-get -y install php5.6-gd
+RUN apt-get -y install php5.6-gmp
 
 #INSTALL PHP7.1 PACKAGES
 RUN apt-get -y install php7.1-mbstring
@@ -45,6 +47,7 @@ RUN apt-get -y install php7.1-imagick
 RUN apt-get -y install php7.1-mcrypt
 RUN apt-get -y install php7.1-zip
 RUN apt-get -y install php7.1-gd
+RUN apt-get -y install php7.1-gmp
 RUN apt-get -y install php7.1-mongodb
 
 #INSTALL PHP7.2 PACKAGES
@@ -56,6 +59,7 @@ RUN apt-get -y install php7.2-pgsql
 RUN apt-get -y install php7.2-imagick
 RUN apt-get -y install php7.2-zip
 RUN apt-get -y install php7.2-gd
+RUN apt-get -y install php7.2-gmp
 RUN apt-get -y install php7.2-mongodb
 
 #INSTALL PHP7.3 PACKAGES
@@ -67,6 +71,7 @@ RUN apt-get -y install php7.3-pgsql
 RUN apt-get -y install php7.3-imagick
 RUN apt-get -y install php7.3-zip
 RUN apt-get -y install php7.3-gd
+RUN apt-get -y install php7.3-gmp
 RUN apt-get -y install php7.3-mongodb
 
 #INSTALL PHP7.4 PACKAGES
@@ -78,6 +83,7 @@ RUN apt-get -y install php7.4-pgsql
 RUN apt-get -y install php7.4-imagick
 RUN apt-get -y install php7.4-zip
 RUN apt-get -y install php7.4-gd
+RUN apt-get -y install php7.4-gmp
 RUN apt-get -y install php7.4-mongodb
 
 #INSTALL PHP8.0 PACKAGES
@@ -89,6 +95,7 @@ RUN apt-get -y install php8.0-pgsql
 RUN apt-get -y install php8.0-imagick
 RUN apt-get -y install php8.0-zip
 RUN apt-get -y install php8.0-gd
+RUN apt-get -y install php8.0-gmp
 RUN apt-get -y install php8.0-mongodb
 
 #INSTALL PHP8.1 PACKAGES
@@ -100,6 +107,7 @@ RUN apt-get -y install php8.1-pgsql
 RUN apt-get -y install php8.1-imagick
 RUN apt-get -y install php8.1-zip
 RUN apt-get -y install php8.1-gd
+RUN apt-get -y install php8.1-gmp
 RUN apt-get -y install php8.1-mongodb
 
 RUN apt-get -y install libxrender1 libfontconfig1 libxtst6 php-mongo pngquant
