@@ -24,6 +24,7 @@ RUN apt -y install php7.3
 RUN apt -y install php7.4
 RUN apt -y install php8.0
 RUN apt -y install php8.1
+RUN apt -y install php8.2
 
 #INSTALL PHP5.6 PACKAGES
 RUN apt-get -y install php5.6-mbstring
@@ -110,7 +111,7 @@ RUN apt-get -y install php8.1-gd
 RUN apt-get -y install php8.1-gmp
 RUN apt-get -y install php8.1-mongodb
 
-#INSTALL PHP8.1 PACKAGES
+#INSTALL PHP8.2 PACKAGES
 RUN apt-get -y install php8.2-mbstring
 RUN apt-get -y install php8.2-xml
 RUN apt-get -y install php8.2-curl
