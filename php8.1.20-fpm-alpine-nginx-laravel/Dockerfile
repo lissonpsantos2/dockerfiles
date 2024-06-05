@@ -17,4 +17,7 @@ RUN touch /run/php/php8.1-fpm.sock
 ENV TZ America/Bahia
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+RUN ln -sf /dev/stderr /var/log/nginx/error.log
+
 RUN rm -rf /var/cache/apk/*
