@@ -25,6 +25,7 @@ RUN apt -y install php7.4
 RUN apt -y install php8.0
 RUN apt -y install php8.1
 RUN apt -y install php8.2
+RUN apt -y install php8.3
 
 #INSTALL PHP5.6 PACKAGES
 RUN apt-get -y install php5.6-mbstring
@@ -98,6 +99,7 @@ RUN apt-get -y install php8.0-zip
 RUN apt-get -y install php8.0-gd
 RUN apt-get -y install php8.0-gmp
 RUN apt-get -y install php8.0-mongodb
+RUN apt-get -y install php8.0-redis
 
 #INSTALL PHP8.1 PACKAGES
 RUN apt-get -y install php8.1-mbstring
@@ -110,6 +112,7 @@ RUN apt-get -y install php8.1-zip
 RUN apt-get -y install php8.1-gd
 RUN apt-get -y install php8.1-gmp
 RUN apt-get -y install php8.1-mongodb
+RUN apt-get -y install php8.1-redis
 
 #INSTALL PHP8.2 PACKAGES
 RUN apt-get -y install php8.2-mbstring
@@ -122,6 +125,20 @@ RUN apt-get -y install php8.2-zip
 RUN apt-get -y install php8.2-gd
 RUN apt-get -y install php8.2-gmp
 RUN apt-get -y install php8.2-mongodb
+RUN apt-get -y install php8.2-redis
+
+#INSTALL PHP8.3 PACKAGES
+RUN apt-get -y install php8.3-mbstring
+RUN apt-get -y install php8.3-xml
+RUN apt-get -y install php8.3-curl
+RUN apt-get -y install php8.3-mysql
+RUN apt-get -y install php8.3-pgsql
+RUN apt-get -y install php8.3-imagick
+RUN apt-get -y install php8.3-zip
+RUN apt-get -y install php8.3-gd
+RUN apt-get -y install php8.3-gmp
+RUN apt-get -y install php8.3-mongodb
+RUN apt-get -y install php8.3-redis
 
 RUN apt-get -y install libxrender1 libfontconfig1 libxtst6 php-mongo pngquant
 
