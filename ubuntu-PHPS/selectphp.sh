@@ -142,6 +142,6 @@ if [ "$SELECTED" = "8.3" ]; then
   a2dismod php8.2
   a2enmod php8.3
   service apache2 restart
-	echo "PHP 8.2 ACTIVATED!"
+	echo "PHP 8.3 ACTIVATED!"
   exit 0
 fi
